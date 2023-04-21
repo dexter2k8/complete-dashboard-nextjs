@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="flex">
       <ProSidebar />
-      <main /* className={`p-4 duration-300 ${isDark ? "bg-slate-100" : "bg-slate-900"} w-full`} */>
+      <main className={`p-4 duration-300 ${isDark ? "bg-slate-900" : "bg-slate-100"} w-full h-screen`}>
         <Navbar />
       </main>
     </div>

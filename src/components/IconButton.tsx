@@ -10,7 +10,7 @@ interface IIconButtonProps {
 function IconButton({ children, onClick }: IIconButtonProps) {
   const { isDark } = useContext(MenuContext);
   return (
-    <MUIButton onClick={onClick} className={`${isDark ? "text-gray-500" : "text-gray-300"}`}>
+    <MUIButton onClick={onClick} className={`${isDark ? "text-gray-300" : "text-gray-500"}`}>
       {children}
     </MUIButton>
   );

@@ -9,22 +9,24 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import { useProSidebar } from "react-pro-sidebar";
 
 function Navbar() {
   const { isDark, setIsDark } = useContext(MenuContext);
+  const { collapseSidebar } = useProSidebar();
   return (
     <div className="flex justify-between">
-      <div className="flex">
-        <IconButton>
+      <div className="flex gap-4">
+        <IconButton onClick={() => collapseSidebar()}>
           <MenuOutlinedIcon />
         </IconButton>
         <div
           className={`${
-            isDark ? "bg-gray-100" : "bg-slate-800"
+            isDark ? "bg-slate-700" : "bg-slate-300"
           } flex items-center w-max rounded overflow-hidden duration-300`}
         >
           <InputBase
-            sx={{ ml: 2, flex: 1, transition: "0.3s", color: `${isDark ? "black" : "white"}` }}
+            sx={{ ml: 2, flex: 1, transition: "0.3s", color: `${isDark ? "#e0e0e0" : "#141414"}` }}
             placeholder="Search"
           />
           <IconButton>
