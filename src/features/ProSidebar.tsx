@@ -47,6 +47,8 @@ function ProSidebar() {
         <MenuItem icon={<PandaIcon />} className="my-4 [&_a.ps-menu-button]:cursor-default">
           <h2 className={`font-semibold ${isDark ? "text-blue-200" : "text-blue-500"}`}>AdminHub</h2>
         </MenuItem>
+      </Menu>
+      <Menu style={{ overflowY: "auto", maxHeight: "80vh" }}>
         <MenuItem
           icon={<HomeOutlinedIcon />}
           active={selected === "Dashboard"}
@@ -133,6 +135,8 @@ function ProSidebar() {
             Geography Chart
           </MenuItem>
         </SubMenu>
+      </Menu>
+      <Menu>
         <MenuItem className="absolute bottom-4 [&_a.ps-menu-button]:cursor-default">
           <section className="flex gap-6">
             <figure className="min-w-fit">
