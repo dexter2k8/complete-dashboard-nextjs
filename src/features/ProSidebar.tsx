@@ -38,17 +38,13 @@ function ProSidebar() {
   };
 
   return (
-    <Sidebar
-      style={{ border: "none" }}
-      backgroundColor={`${isDark ? "#334155" : "#cbd5e1"}`}
-      rootStyles={styledSidebar}
-    >
+    <Sidebar className="border-none" backgroundColor={`${isDark ? "#334155" : "#cbd5e1"}`} rootStyles={styledSidebar}>
       <Menu>
         <MenuItem icon={<PandaIcon />} className="my-4 [&_a.ps-menu-button]:cursor-default">
           <h2 className={`font-semibold ${isDark ? "text-blue-200" : "text-blue-500"}`}>AdminHub</h2>
         </MenuItem>
       </Menu>
-      <Menu style={{ overflowY: "auto", maxHeight: "80vh" }}>
+      <Menu className="overflow-y-auto h-[calc(100vh-11rem)]">
         <MenuItem
           icon={<HomeOutlinedIcon />}
           active={selected === "Dashboard"}
