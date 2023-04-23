@@ -1,6 +1,7 @@
 export const mockDataTeam = [
   {
     id: 1,
+    register: 123512,
     name: "Jon Snow",
     email: "jonsnow@gmail.com",
     age: 35,
@@ -9,6 +10,7 @@ export const mockDataTeam = [
   },
   {
     id: 2,
+    register: 761158,
     name: "Cersei Lannister",
     email: "cerseilannister@gmail.com",
     age: 42,
@@ -17,6 +19,7 @@ export const mockDataTeam = [
   },
   {
     id: 3,
+    register: 413513,
     name: "Jaime Lannister",
     email: "jaimelannister@gmail.com",
     age: 45,
@@ -25,6 +28,7 @@ export const mockDataTeam = [
   },
   {
     id: 4,
+    register: 245654,
     name: "Anya Stark",
     email: "anyastark@gmail.com",
     age: 16,
@@ -33,6 +37,7 @@ export const mockDataTeam = [
   },
   {
     id: 5,
+    register: 644784,
     name: "Daenerys Targaryen",
     email: "daenerystargaryen@gmail.com",
     age: 31,
@@ -41,6 +46,7 @@ export const mockDataTeam = [
   },
   {
     id: 6,
+    register: 268966,
     name: "Ever Melisandre",
     email: "evermelisandre@gmail.com",
     age: 150,
@@ -49,6 +55,7 @@ export const mockDataTeam = [
   },
   {
     id: 7,
+    register: 326888,
     name: "Ferrara Clifford",
     email: "ferraraclifford@gmail.com",
     age: 44,
@@ -57,6 +64,7 @@ export const mockDataTeam = [
   },
   {
     id: 8,
+    register: 747853,
     name: "Rossini Frances",
     email: "rossinifrances@gmail.com",
     age: 36,
@@ -65,6 +73,7 @@ export const mockDataTeam = [
   },
   {
     id: 9,
+    register: 415997,
     name: "Harvey Roxie",
     email: "harveyroxie@gmail.com",
     age: 65,

@@ -8,7 +8,7 @@ import { MenuContext } from "@/hook/menuContext";
 function Home() {
   const { isDark } = useContext(MenuContext);
   return (
-    <div className="flex items-center justify-between my-11">
+    <div className="flex items-center justify-between">
       <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
       <Button className={`${isDark ? "bg-indigo-900 text-gray-200" : "bg-indigo-300 text-gray-800"} font-bold h-11`}>
         <DownloadOutlinedIcon className="mr-2" />

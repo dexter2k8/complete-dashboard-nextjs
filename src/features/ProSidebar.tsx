@@ -57,7 +57,7 @@ function ProSidebar() {
           <MenuItem
             icon={<PeopleOutlinedIcon />}
             active={selected === "Manage team"}
-            onClick={(e) => handleChange(e, "Manage team", "" /* "team" */)}
+            onClick={(e) => handleChange(e, "Manage team", "team")}
           >
             Manage team
           </MenuItem>
