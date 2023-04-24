@@ -7,9 +7,9 @@ interface IHeaderProps {
 }
 
 function Header({ title, subtitle }: IHeaderProps) {
-  const { isDark, setIsDark } = useContext(MenuContext);
+  const { isDark } = useContext(MenuContext);
   return (
-    <div className="my-11">
+    <div className="my-9">
       <h2 className={`font-['Roboto'] font-bold leading-tight" ${isDark ? "text-gray-200" : "text-gray-700"}`}>
         {title}
       </h2>
