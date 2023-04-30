@@ -38,7 +38,11 @@ function ProSidebar() {
   };
 
   return (
-    <Sidebar className="border-none" backgroundColor={`${isDark ? "#334155" : "#cbd5e1"}`} rootStyles={styledSidebar}>
+    <Sidebar
+      className="border-none bg-slate-300"
+      backgroundColor={`${isDark ? "#334155" : "#cbd5e1"}`}
+      rootStyles={styledSidebar}
+    >
       <Menu>
         <MenuItem icon={<PandaIcon />} className="my-4 [&_a.ps-menu-button]:cursor-default">
           <h2 className={`font-semibold ${isDark ? "text-blue-200" : "text-blue-500"}`}>AdminHub</h2>
@@ -52,8 +56,7 @@ function ProSidebar() {
         >
           Dashboard
         </MenuItem>
-
-        <SubMenu label="Data" rootStyles={styledSidebar}>
+        <SubMenu label="Pages" rootStyles={styledSidebar}>
           <MenuItem
             icon={<PeopleOutlinedIcon />}
             active={selected === "Manage team"}
@@ -62,26 +65,9 @@ function ProSidebar() {
             Manage team
           </MenuItem>
           <MenuItem
-            icon={<ContactsOutlinedIcon />}
-            active={selected === "Contacts Information"}
-            onClick={(e) => handleChange(e, "Contacts Information", "" /* "contacts" */)}
-          >
-            Contacts Information
-          </MenuItem>
-          <MenuItem
-            icon={<ReceiptOutlinedIcon />}
-            active={selected === "Invoices Balances"}
-            onClick={(e) => handleChange(e, "Invoices Balances", "" /* "invoices" */)}
-          >
-            Invoices Balances
-          </MenuItem>
-        </SubMenu>
-
-        <SubMenu label="Pages" rootStyles={styledSidebar}>
-          <MenuItem
             icon={<PersonOutlinedIcon />}
             active={selected === "Profile Form"}
-            onClick={(e) => handleChange(e, "Profile Form", "" /* "form" */)}
+            onClick={(e) => handleChange(e, "Profile Form", "form")}
           >
             Profile Form
           </MenuItem>
