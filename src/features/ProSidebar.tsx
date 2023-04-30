@@ -74,7 +74,7 @@ function ProSidebar() {
           <MenuItem
             icon={<CalendarTodayOutlinedIcon />}
             active={selected === "Calendar"}
-            onClick={(e) => handleChange(e, "Calendar", "" /* "calendar" */)}
+            onClick={(e) => handleChange(e, "Calendar", "calendar")}
           >
             Calendar
           </MenuItem>
