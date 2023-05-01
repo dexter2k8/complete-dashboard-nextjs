@@ -81,7 +81,7 @@ function ProSidebar() {
           <MenuItem
             icon={<HelpOutlineOutlinedIcon />}
             active={selected === "FAQ Page"}
-            onClick={(e) => handleChange(e, "FAQ Page", "" /* "faq" */)}
+            onClick={(e) => handleChange(e, "FAQ Page", "faq")}
           >
             FAQ Page
           </MenuItem>
