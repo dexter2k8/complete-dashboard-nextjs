@@ -1,13 +1,15 @@
 import Header from "@/components/Header";
-import { memo, useState } from "react";
+import { memo, useContext, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import { DateSelectArg, EventApi, EventClickArg } from "@fullcalendar/core";
+import { MenuContext } from "@/hook/menuContext";
 
 function Calendar() {
+  const { isDark } = useContext(MenuContext);
   const [currentEvents, setCurrentEvents] = useState<EventApi[]>([]);
 
   const handleDateClick = (selected: DateSelectArg) => {
@@ -35,12 +37,17 @@ function Calendar() {
   return (
     <>
       <Header title="Calendar" subtitle="Full Calendar Interactive Page" />
-      <div className="flex">
-        <aside>
-          <h4>Events</h4>
+      <div className="grid gap-4 grid-cols-[1fr,5fr]">
+        <aside className={`p-4 rounded ${isDark ? "bg-slate-700" : "bg-slate-300"}`}>
+          <h4 className={`${isDark ? "text-gray-200" : "text-gray-800"}`}>Events</h4>
           <ul>
             {currentEvents.map((event) => (
-              <li key={event.id}>
+              <li
+                key={event.id}
+                className={`my-3 py-2 px-4 rounded ${
+                  isDark ? "bg-teal-700 text-gray-200" : "bg-teal-400 text-gray-800"
+                }`}
+              >
                 <p>{event.title}</p>
                 <p>
                   {event.start &&
@@ -50,7 +57,7 @@ function Calendar() {
             ))}
           </ul>
         </aside>
-        <div>
+        <div className={`${isDark ? "text-gray-200" : "text-gray-800"}`}>
           <FullCalendar
             height="calc(100vh - 16.5rem)"
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
