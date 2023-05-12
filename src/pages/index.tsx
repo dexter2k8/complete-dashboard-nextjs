@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import { Button } from "@mui/material";
+import IconButton from "@/components/IconButton";
 import { memo, useContext } from "react";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import EmailIcon from "@mui/icons-material/Email";
@@ -9,6 +10,8 @@ import TrafficIcon from "@mui/icons-material/Traffic";
 import { MenuContext } from "@/hook/menuContext";
 import StatBox from "@/components/StatBox";
 import ChartLine from "@/features/ChartLine";
+import { mockTransactions } from "@/mock/mockData";
+import ProgressCircle from "@/components/ProgressCircle";
 
 function Home() {
   const { isDark } = useContext(MenuContext);
@@ -22,6 +25,7 @@ function Home() {
         </Button>
       </div>
       <div className="grid grid-cols-12 auto-rows-[8.75rem] gap-5">
+        {/* ROW 1 */}
         <div className={`flex place-items-center col-span-3 rounded ${isDark ? "bg-slate-700" : "bg-slate-300"}`}>
           <StatBox
             title="12,361"
@@ -66,15 +70,63 @@ function Home() {
               <h4 className={`font-['Roboto'] ${isDark ? "text-gray-200" : "text-gray-800"}`}>Revenue Generated</h4>
               <h3 className={`font-bold ${isDark ? "text-teal-500" : "text-teal-700"}`}>$59,342.32</h3>
             </div>
-            <div>
+            <IconButton>
               <DownloadOutlinedIcon className={`text-3xl ${isDark ? "text-teal-500" : "text-teal-700"}`} />
-            </div>
+            </IconButton>
           </div>
           <div className="h-60 -mt-8">
             <ChartLine isDashboard={false} />
           </div>
         </div>
-        <div className="col-span-4"></div>
+        <div
+          className={`col-span-4 row-span-2 overflow-auto rounded grid grid-cols-3 ${
+            isDark ? "bg-slate-700" : "bg-slate-300"
+          }`}
+        >
+          <h4
+            className={`font-['Roboto'] border-b-4 p-4 col-span-3 ${
+              isDark ? "text-gray-200 border-slate-900" : "text-gray-800 border-slate-100"
+            }`}
+          >
+            Recent Transactions
+          </h4>
+          {mockTransactions.map((el, i) => (
+            <>
+              <div
+                className={`border-b-4 p-4 ${
+                  isDark ? "text-gray-200 border-slate-900" : "text-gray-800 border-slate-100"
+                }`}
+              >
+                <h5 className={`font-bold ${isDark ? "text-teal-500" : "text-teal-700"}`}>{el.txId}</h5>
+                <p>{el.user}</p>
+              </div>
+              <span
+                className={`border-b-4 p-4 flex items-center justify-center ${
+                  isDark ? "text-gray-200 border-slate-900" : "text-gray-800 border-slate-100"
+                }`}
+              >
+                {el.date}
+              </span>
+              <div
+                className={`border-b-4 p-4 flex items-center justify-end ${
+                  isDark ? "text-gray-200 border-slate-900" : "text-gray-800 border-slate-100"
+                }`}
+              >
+                <span className={`p-1 rounded ${isDark ? "bg-teal-700" : "bg-teal-500"}`}>{el.cost}</span>
+              </div>
+            </>
+          ))}
+        </div>
+
+        {/* ROW 3 */}
+        <div className={`col-span-4 row-span-2 p-6 rounded ${isDark ? "bg-slate-700" : "bg-slate-300"}`}>
+          <h4 className={`font-['Roboto'] ${isDark ? "text-gray-200" : "text-gray-800"}`}>Campaign</h4>
+          <div className="mt-6 flex flex-col items-center">
+            <ProgressCircle size={125} />
+            <h5 className={`mt-4 ${isDark ? "text-teal-500" : "text-teal-700"}`}>$48,352 revenue generated</h5>
+            <p className={isDark ? "text-gray-200" : "text-gray-800"}>Includes extra misc expenditures and costs</p>
+          </div>
+        </div>
       </div>
     </>
   );
