@@ -91,28 +91,28 @@ function ProSidebar() {
           <MenuItem
             icon={<BarChartOutlinedIcon />}
             active={selected === "Bar Chart"}
-            onClick={(e) => handleChange(e, "Bar Chart", "" /* "bar" */)}
+            onClick={(e) => handleChange(e, "Bar Chart", "bar")}
           >
             Bar Chart
           </MenuItem>
           <MenuItem
             icon={<PieChartOutlineOutlinedIcon />}
             active={selected === "Pie Chart"}
-            onClick={(e) => handleChange(e, "Pie Chart", "" /* "pie" */)}
+            onClick={(e) => handleChange(e, "Pie Chart", "pie")}
           >
             Pie Chart
           </MenuItem>
           <MenuItem
             icon={<TimelineOutlinedIcon />}
             active={selected === "Line Chart"}
-            onClick={(e) => handleChange(e, "Line Chart", "" /* "line" */)}
+            onClick={(e) => handleChange(e, "Line Chart", "line")}
           >
             Line Chart
           </MenuItem>
           <MenuItem
             icon={<MapOutlinedIcon />}
             active={selected === "Geography Chart"}
-            onClick={(e) => handleChange(e, "Geography Chart", "" /* "geography" */)}
+            onClick={(e) => handleChange(e, "Geography Chart", "geography")}
           >
             Geography Chart
           </MenuItem>
