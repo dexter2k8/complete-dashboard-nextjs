@@ -2,7 +2,11 @@ import { mockBarData as data } from "@/mock/mockData";
 import { ResponsiveBar } from "@nivo/bar";
 import { memo } from "react";
 
-function ChartBar() {
+interface IDashboard {
+  isDashboard: boolean;
+}
+
+function ChartBar({ isDashboard = true }: IDashboard) {
   return (
     <ResponsiveBar
       data={data}
@@ -86,7 +90,7 @@ function ChartBar() {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "country",
+        legend: isDashboard && "country",
         legendPosition: "middle",
         legendOffset: 32,
       }}
@@ -94,7 +98,7 @@ function ChartBar() {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "food",
+        legend: isDashboard && "food",
         legendPosition: "middle",
         legendOffset: -40,
       }}

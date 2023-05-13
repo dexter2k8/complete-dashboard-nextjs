@@ -12,19 +12,21 @@ import StatBox from "@/components/StatBox";
 import ChartLine from "@/features/ChartLine";
 import { mockTransactions } from "@/mock/mockData";
 import ProgressCircle from "@/components/ProgressCircle";
+import ChartBar from "@/features/ChartBar";
+import ChartGeography from "@/features/ChartGeography";
 
 function Home() {
   const { isDark } = useContext(MenuContext);
   return (
     <>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between pr-5">
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
         <Button className={`${isDark ? "bg-indigo-900 text-gray-200" : "bg-indigo-300 text-gray-800"} font-bold h-11`}>
           <DownloadOutlinedIcon className="mr-2" />
           Download Reports
         </Button>
       </div>
-      <div className="grid grid-cols-12 auto-rows-[8.75rem] gap-5">
+      <div className="pr-5 grid grid-cols-12 auto-rows-[8.75rem] gap-5">
         {/* ROW 1 */}
         <div className={`flex place-items-center col-span-3 rounded ${isDark ? "bg-slate-700" : "bg-slate-300"}`}>
           <StatBox
@@ -125,6 +127,20 @@ function Home() {
             <ProgressCircle size={125} />
             <h5 className={`mt-4 ${isDark ? "text-teal-500" : "text-teal-700"}`}>$48,352 revenue generated</h5>
             <p className={isDark ? "text-gray-200" : "text-gray-800"}>Includes extra misc expenditures and costs</p>
+          </div>
+        </div>
+        <div className={`col-span-4 row-span-2 py-6 rounded ${isDark ? "bg-slate-700" : "bg-slate-300"}`}>
+          <h4 className={`font-['Roboto'] px-6 ${isDark ? "text-gray-200" : "text-gray-800"}`}>Sales Quantity</h4>
+          <div className="h-64 -mt-6">
+            <ChartBar isDashboard={false} />
+          </div>
+        </div>
+        <div className={`col-span-4 row-span-2 py-6 rounded ${isDark ? "bg-slate-700" : "bg-slate-300"}`}>
+          <h4 className={`font-['Roboto'] px-6 mb-3 ${isDark ? "text-gray-200" : "text-gray-800"}`}>
+            Geography Based Traffic
+          </h4>
+          <div className="h-52">
+            <ChartGeography isDashboard={false} />
           </div>
         </div>
       </div>

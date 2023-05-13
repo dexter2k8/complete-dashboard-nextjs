@@ -21,7 +21,11 @@ function Layout({ children }: ILayoutProps) {
       </Head>
       <div className="flex">
         <ProSidebar />
-        <div className={`h-screen w-full flex flex-col p-4 ${isDark ? "bg-slate-900" : "bg-slate-100"} duration-300`}>
+        <div
+          className={`h-screen w-full flex flex-col pt-4 pl-5 pb-0 ${
+            isDark ? "bg-slate-900" : "bg-slate-100"
+          } duration-300`}
+        >
           <Navbar />
           <main className="flex-grow overflow-auto">{children}</main>
           <Footer />

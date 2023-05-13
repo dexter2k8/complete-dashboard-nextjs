@@ -6,7 +6,7 @@ interface IDashboard {
   isDashboard: boolean;
 }
 
-function ChartLine({ isDashboard }: IDashboard) {
+function ChartLine({ isDashboard = true }: IDashboard) {
   return (
     <ResponsiveLine
       data={data}

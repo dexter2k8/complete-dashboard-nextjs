@@ -15,7 +15,7 @@ function Navbar() {
   const { isDark, setIsDark } = useContext(MenuContext);
   const { collapseSidebar } = useProSidebar();
   return (
-    <div className="flex items-center gap-2 sm:justify-between flex-col sm:flex-row pb-4">
+    <div className="flex items-center gap-2 sm:justify-between flex-col sm:flex-row pb-4 pr-5">
       <div className="flex gap-4">
         <IconButton onClick={() => collapseSidebar()}>
           <MenuOutlinedIcon />

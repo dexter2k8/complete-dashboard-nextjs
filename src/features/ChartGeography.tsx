@@ -3,7 +3,11 @@ import { ResponsiveChoropleth } from "@nivo/geo";
 import { mockGeographyData as data } from "@/mock/mockData";
 import { geoFeatures } from "@/mock/mockGeoFeatures";
 
-function ChartGeography() {
+interface IDashboard {
+  isDashboard: boolean;
+}
+
+function ChartGeography({ isDashboard = true }: IDashboard) {
   return (
     <ResponsiveChoropleth
       data={data}
@@ -42,36 +46,40 @@ function ChartGeography() {
       unknownColor="#666666"
       label="properties.name"
       valueFormat=".2s"
-      projectionScale={150}
-      projectionTranslation={[0.5, 0.5]}
+      projectionScale={isDashboard ? 150 : 40}
+      projectionTranslation={isDashboard ? [0.5, 0.5] : [0.49, 0.6]}
       projectionRotation={[0, 0, 0]}
       borderWidth={1.5}
       borderColor="#152538"
-      legends={[
-        {
-          anchor: "bottom-left",
-          direction: "column",
-          justify: true,
-          translateX: 20,
-          translateY: -100,
-          itemsSpacing: 0,
-          itemWidth: 94,
-          itemHeight: 18,
-          itemDirection: "left-to-right",
-          itemTextColor: "grey",
-          itemOpacity: 0.85,
-          symbolSize: 18,
-          effects: [
-            {
-              on: "hover",
-              style: {
-                itemTextColor: "#000000",
-                itemOpacity: 1,
+      legends={
+        isDashboard
+          ? [
+              {
+                anchor: "bottom-left",
+                direction: "column",
+                justify: true,
+                translateX: 20,
+                translateY: -100,
+                itemsSpacing: 0,
+                itemWidth: 94,
+                itemHeight: 18,
+                itemDirection: "left-to-right",
+                itemTextColor: "grey",
+                itemOpacity: 0.85,
+                symbolSize: 18,
+                effects: [
+                  {
+                    on: "hover",
+                    style: {
+                      itemTextColor: "#000000",
+                      itemOpacity: 1,
+                    },
+                  },
+                ],
               },
-            },
-          ],
-        },
-      ]}
+            ]
+          : undefined
+      }
     />
   );
 }
