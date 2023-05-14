@@ -9,7 +9,7 @@ function Faq() {
   return (
     <>
       <Header title="FAQ" subtitle="Frequently Asked Questions Page" />
-      <div className="h-[calc(100vh-16.5rem)] overflow-y-auto">
+      <div className="h-[calc(100vh-16.5rem)] pr-5 overflow-y-auto">
         <Accordion defaultExpanded className={`${isDark ? "bg-slate-700" : "bg-slate-300"}`}>
           <AccordionSummary expandIcon={<ExpandMoreIcon className={`${isDark ? "text-gray-200" : "text-gray-800"}`} />}>
             <p className={`${isDark ? "text-teal-400" : "text-teal-700"}`}>An important question</p>

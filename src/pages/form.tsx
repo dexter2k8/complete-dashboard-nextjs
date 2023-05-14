@@ -30,7 +30,7 @@ function FormField() {
     <>
       <Header title="REGISTER USER" subtitle="Register a New User Profile" />
       <div className="overflow-y-auto">
-        <center className="h-[calc(100vh-16.5rem)]">
+        <center className="h-[calc(100vh-16.5rem)] pr-5">
           <Formik initialValues={initialValues} validationSchema={schema} onSubmit={handleFormSubmit}>
             {({ isSubmitting }) => (
               <Form

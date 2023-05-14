@@ -45,7 +45,7 @@ function Team() {
     <>
       <Header title="TEAM" subtitle="Managing the Team Members" />
       <div
-        className={`rounded overflow-hidden h-[calc(100vh-16.5rem)] [&_.MuiDataGrid-row]:cursor-default [&_.MuiDataGrid-root]:border-none [&_.MuiDataGrid-columnHeaders]:border-none [&_.MuiDataGrid-footerContainer]:border-none [&_.MuiDataGrid-cell:focus]:outline-none ${
+        className={`rounded overflow-hidden h-[calc(100vh-16.5rem)] w-[calc(100%-1.25rem)] [&_.MuiDataGrid-row]:cursor-default [&_.MuiDataGrid-root]:border-none [&_.MuiDataGrid-columnHeaders]:border-none [&_.MuiDataGrid-footerContainer]:border-none [&_.MuiDataGrid-cell:focus]:outline-none ${
           isDark
             ? "[&_.nameColumn]:text-cyan-300 [&_.MuiDataGrid-virtualScroller]:bg-slate-700 [&_.MuiDataGrid-row]:text-gray-200 [&_.MuiDataGrid-columnHeaders]:bg-indigo-900 [&_.MuiDataGrid-columnHeaders]:text-gray-200 [&_.MuiDataGrid-footerContainer]:bg-indigo-900 [&_.MuiDataGrid-footerContainer_*]:text-gray-200 [&_.MuiDataGrid-cell]:border-slate-900"
             : "[&_.nameColumn]:text-green-700 [&_.MuiDataGrid-virtualScroller]:bg-slate-300 [&_.MuiDataGrid-row]:text-gray-800 [&_.MuiDataGrid-columnHeaders]:bg-indigo-300 [&_.MuiDataGrid-columnHeaders]:text-gray-800 [&_.MuiDataGrid-footerContainer]:bg-indigo-300 [&_.MuiDataGrid-footerContainer_*]:text-gray-800 [&_.MuiDataGrid-cell]:border-slate-100"

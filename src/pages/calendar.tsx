@@ -37,7 +37,7 @@ function Calendar() {
   return (
     <>
       <Header title="Calendar" subtitle="Full Calendar Interactive Page" />
-      <div className="grid gap-4 grid-cols-[1fr,5fr]">
+      <div className="grid gap-4 grid-cols-[1fr,5fr] pr-5">
         <aside className={`p-4 rounded ${isDark ? "bg-slate-700" : "bg-slate-300"}`}>
           <h4 className={`${isDark ? "text-gray-200" : "text-gray-800"}`}>Events</h4>
           <ul>
