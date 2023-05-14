@@ -7,7 +7,7 @@ function Bar() {
     <>
       <Header title="Bar Chart" subtitle="Simple Bar Chart" />
       <div className="h-[calc(100vh-16.5rem)]">
-        <ChartBar />
+        <ChartBar isDashboard={true} />
       </div>
     </>
   );

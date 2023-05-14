@@ -7,7 +7,7 @@ function Line() {
     <>
       <Header title="Line Chart" subtitle="Simple Line Chart" />
       <div className="h-[calc(100vh-16.5rem)]">
-        <ChartLine />
+        <ChartLine isDashboard={true} />
       </div>
     </>
   );
